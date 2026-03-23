@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2026/03/19 09:12:28.000.355,=C:\Users\diego\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2026/03/19 09:12:28.000.647,=C:\Users\diego\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2026/03/19 09:37:52.000.510,C:\Users\diego\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\diego\Desktop\Programacion 2\Recursividad\Unit1.h</Transaction>
+    <Transaction>2026/03/19 09:37:52.000.537,C:\Users\diego\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\diego\Desktop\Programacion 2\Recursividad\recursividad.cbproj</Transaction>
+    <Transaction>2026/03/19 09:37:52.000.473,C:\Users\diego\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\diego\Desktop\Programacion 2\Recursividad\recursividadPCH1.h</Transaction>
+    <Transaction>2026/03/19 09:37:52.000.510,C:\Users\diego\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\diego\Desktop\Programacion 2\Recursividad\Unit1.dfm</Transaction>
+    <Transaction>2026/03/19 09:37:52.000.510,C:\Users\diego\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\diego\Desktop\Programacion 2\Recursividad\Unit1.cpp</Transaction>
+    <Transaction>2026/03/19 09:38:04.000.462,C:\Users\diego\Desktop\Programacion 2\Recursividad\Unit1.h=C:\Users\diego\Desktop\Programacion 2\Recursividad\recursv.h</Transaction>
+    <Transaction>2026/03/19 09:38:04.000.462,C:\Users\diego\Desktop\Programacion 2\Recursividad\Unit1.dfm=C:\Users\diego\Desktop\Programacion 2\Recursividad\recursv.dfm</Transaction>
+    <Transaction>2026/03/19 09:38:04.000.462,C:\Users\diego\Desktop\Programacion 2\Recursividad\Unit1.cpp=C:\Users\diego\Desktop\Programacion 2\Recursividad\recursv.cpp</Transaction>
+  </Transactions>
+</BorlandProject>
