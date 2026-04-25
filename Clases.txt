@@ -1,0 +1,47 @@
+1.1 Cargar un vector con los siguientes números contenidos en una cadena e la siguiente forma
+x="12-43,187*2hola" -> v[12,43,187,2]
+
+hipótesis que existen:
+n-1  n-2  n/2
+
+Paso 0:
+E: x(una cadena)
+S: v(Vector),n(cantidad)
+Paso 1: VR=m  m=Camt de caract en x
+paso 2: Dm=[0,2^32 -1];
+paso 3 Caso base: x="v[],n=0" 
+paso  4 Caso general: x="12-43,187*2hola"
+k=m-1, menos primero
+La hipótesis haría: v[2,43,187,2], n=4
+En ese hay 4 tipos de casos para el primer elemento de la cadena y el primero de la cadena restante:
+x= 1 2-43,187*2hola
+ 1er 2da parte
+
+d1=1 d2=2
+si: d1 , d2 = v[12,43,187,2] n=4  (d1 y d2 son verdaderos)
+ d1, -d2 = Insertar x1, en la pos 0: v[1,43,187,2], n=4. Ejemplo: x=1-43,187*2hola
+ -d1, d2 = (No hacer nada)
+ -d1, -d2 = (No hacer nada)
+
+Solución 2: k=m-1, menos el ultimo
+
+x="12-43,187*2ho46"
+d1=4 d2=6
+d, d = Modificar ult. Elemento
+d, -d = Nada
+-d, d = Agregar ultimo elemento al vector
+-d, -d = Nada
+
+
+1.2 Cargar un vector con los dígitos de un número de la siguiente forma:
+x=1234567 ; v[12,34,56,7];
+Paso 0: 
+E: x (Byte numero)
+S: v,n (Vector, cant de números)
+Paso 1:
+VR= m (Cant de num de x) 
+Paso 2: Dm=[0,2^32]
+Paso 3 Caso Base: x="" -> n=0 v=[]
+Paso 4 Caso General:  k=m-2 Menos el ultimo
+x=1234567 -> v=[12,34,56,7]
+x
