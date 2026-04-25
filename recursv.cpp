@@ -343,6 +343,24 @@ void CadenaMatriz(AnsiString x,TStringGrid *v,byte &n)
 
 }
 //---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button5Click(TObject *Sender)
+{byte i;
+ for (i=0; i<StringGrid1->ColCount; i++)
+  StringGrid1->Cells[i][0]="";
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{byte i; byte j;
+ for (i=0; i<StringGrid2->RowCount; i++)
+  for (j=0; j<StringGrid2->ColCount; j++)
+  StringGrid2->Cells[i][j]="";
+
+}
+
 char AbecedarioMayus(byte pos)
 {AnsiString x="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
  return x[pos+1];
@@ -542,21 +560,99 @@ void __fastcall TForm1::Crearmatrizinicialderechadecolumna1Click(TObject *Sender
 	CargarMatriz(StringGrid2, n);
 }
 //---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+void SerpienteEx(TStringGrid *v, byte n)
+{
+ if (n == 0) // Caso Base
+  return;
+ else // Caso General
+ {
+  SerpienteEx(v, n - 1);
+  byte F = v->RowCount;
+  byte C = v->ColCount;
+  byte k = n - 1;
+  byte filaAbajo = k / C;
+  byte y = (F - 1) - filaAbajo;
+  byte x;
+  if (filaAbajo % 2 == 0) // Condición
+   x = (C - 1) - (k % C);
+  else
+   x = k % C;
+  v->Cells[x][y] = IntToStr(n);
+ }
+}
 
-void __fastcall TForm1::Button5Click(TObject *Sender)
-{byte i;
- for (i=0; i<StringGrid1->ColCount; i++)
-  StringGrid1->Cells[i][0]="";
+//---------------------------------------------------------------------------
 
+void __fastcall TForm1::N11Click(TObject *Sender)
+{
+ SerpienteEx(StringGrid2,StringGrid2->ColCount*StringGrid2->RowCount);
+}
+
+//---------------------------------------------------------------------------
+void Examen2(AnsiString x, TStringGrid *v, byte &n)
+{byte m = x.Length();
+ if (m == 0) // 1er Caso Base
+  n = 0;
+ else if (m == 1) // 2do Caso Base
+ {
+  if (isalpha(x[1]))
+  {
+   v->Cells[0][0] = String(x[1]);
+   n = 1;
+  }
+  else
+   n = 0;
+ }
+ else // Caso General
+ {
+  char z = x[m];
+  x.Delete(m, 1);
+  Examen2(x, v, n);
+   if (isalpha(x[m-1]) && isalpha(z)) // Condición
+	v->Cells[n-1][0] = v->Cells[n-1][0] + String(z);
+	else if (!isalpha(x[m-1]) && isalpha(z)) // Condición
+	{
+	 v->Cells[n][0] = String(z);
+	 n++;
+	 }
+  }
+}
+
+
+void __fastcall TForm1::N21Click(TObject *Sender)
+{byte n;
+ AnsiString x = Edit1->Text;
+ StringGrid1->ColCount = x.Length();
+ Examen2(x, StringGrid1, n);
+ if (n > 0)
+ StringGrid1->ColCount = n;
+}
+//---------------------------------------------------------------------------
+void Examen3(AnsiString x, TStringGrid *v, byte &n)
+{
+ byte m = x.Length();
+ if (m == 0) // Caso Base
+  n = 0;
+ else // Caso General
+ { char z = x[1];
+   x.Delete(1, 1);
+   Examen3(x, v, n);
+	if (z !=' ') {
+	 v->Cells[n][0]=String(z);
+	 n++;
+	}
+ }
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Button6Click(TObject *Sender)
-{byte i; byte j;
- for (i=0; i<StringGrid2->RowCount; i++)
-  for (j=0; j<StringGrid2->ColCount; j++)
-  StringGrid2->Cells[i][j]="";
-
+void __fastcall TForm1::N31Click(TObject *Sender)
+{byte n;
+ AnsiString x = Edit1->Text;
+ StringGrid1->ColCount = x.Length();
+ Examen3(x, StringGrid1, n);
+ if (n > 0)
+  StringGrid1->ColCount = n;
 }
 //---------------------------------------------------------------------------
 

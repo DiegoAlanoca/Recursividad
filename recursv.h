@@ -40,6 +40,10 @@ __published:	// IDE-managed Components
 	TMenuItem *Crearmatrizinicialderechadecolumna1;
 	TButton *Button5;
 	TButton *Button6;
+	TMenuItem *Examen1;
+	TMenuItem *N11;
+	TMenuItem *N21;
+	TMenuItem *N31;
 	void __fastcall FuncionparacontarcantdeNumerosdeunacadena2Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall N11Cargardelasiguienteforma1Click(TObject *Sender);
@@ -58,6 +62,9 @@ __published:	// IDE-managed Components
 	void __fastcall Crearmatrizinicialderechadecolumna1Click(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
+	void __fastcall N11Click(TObject *Sender);
+	void __fastcall N21Click(TObject *Sender);
+	void __fastcall N31Click(TObject *Sender);
 
 
 

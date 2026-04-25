@@ -205,5 +205,20 @@ object Form1: TForm1
         OnClick = Crearmatrizinicialderechadecolumna1Click
       end
     end
+    object Examen1: TMenuItem
+      Caption = 'Examen '
+      object N11: TMenuItem
+        Caption = '1)'
+        OnClick = N11Click
+      end
+      object N21: TMenuItem
+        Caption = '2)'
+        OnClick = N21Click
+      end
+      object N31: TMenuItem
+        Caption = '3)'
+        OnClick = N31Click
+      end
+    end
   end
 end
